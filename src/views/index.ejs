@@ -1,0 +1,98 @@
+
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webhook转发服务</title>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.ico">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            max-width: 800px;
+            margin: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        .description {
+            color: #34495e;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .feature {
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .feature h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .feature p {
+            color: #7f8c8d;
+            margin: 0;
+        }
+        .endpoint {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 1rem 0;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Webhook转发服务</h1>
+        <p class="description">
+            一个简单可靠的Webhook转发服务，帮助您轻松实现系统间的消息通知和事件触发。
+        </p>
+        <div class="endpoint">
+            POST /api/v1/webhook/send
+        </div>
+        <div class="features">
+            <div class="feature">
+                <h3>可靠转发</h3>
+                <p>支持多种HTTP方法，确保消息可靠送达目标端点。</p>
+            </div>
+            <div class="feature">
+                <h3>重试机制</h3>
+                <p>内置智能重试机制，处理临时网络故障和目标服务不可用情况。</p>
+            </div>
+            <div class="feature">
+                <h3>安全保障</h3>
+                <p>支持签名验证和IP白名单，确保webhook调用的安全性。</p>
+            </div>
+            <div class="feature">
+                <h3>实时日志</h3>
+                <p>提供详细的调用日志和状态监控，方便追踪和调试。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

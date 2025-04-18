@@ -1,0 +1,38 @@
+{
+  "name": "stage_server",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "apidoc": "apidoc -i src/routes -o src/public/apiDoc",
+    "postinstall": "npm run apidoc",
+    "deploy": "wrangler deploy",
+    "dev:worker": "wrangler dev"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "axios": "^1.8.4",
+    "chalk": "^5.4.1",
+    "cloudflare": "^4.2.0",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.3.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "apidoc": "^0.29.0",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.5.3",
+    "wrangler": "^3.0.0",
+    "@cloudflare/workers-types": "^4.20240208.0"
+  }
+}
