@@ -1,23 +1,29 @@
 import axios from 'axios';
 
 const sendController = async (keyStr, params, res) => {
-  const { data } = await axios({
-    method: 'post',
-    url: `https://qyapi.weixin.qq.com/cgi-bin/webhook/send?${keyStr}`,
-    data: params,
-  });
-  console.log(data);
-  const { errcode, errmsg } = data;
-  if (errcode !== 0) {
-    res.status(500).json({
-      code: 5000,
+  try {
+    const { data } = await axios({
+      method: 'post',
+      url: `https://qyapi.weixin.qq.com/cgi-bin/webhook/send?${keyStr}`,
+      data: params,
+    });
+    const { errcode, errmsg } = data;
+    if (errcode !== 0) {
+      res.status(500).json({
+        code: 5000,
+        message: errmsg,
+      });
+    }
+    res.status(200).json({
+      code: 2000,
       message: errmsg,
     });
+  } catch (e) {
+    res.status(500).json({
+      code: 5000,
+      message: e.message,
+    });
   }
-  res.status(200).json({
-    code: 2000,
-    message: errmsg,
-  });
 };
 
 export const sendText = async (req, res) => {
