@@ -1,5 +1,5 @@
 import express from 'express';
-import { sendText } from '../../controllers/sendController.js';
+import { sendCard, sendText } from '../../controllers/sendController.js';
 
 const sendRouter = express.Router();
 
@@ -28,6 +28,6 @@ const sendRouter = express.Router();
  *     }
  */
 sendRouter.all('/text', sendText);
-
+sendRouter.all('/card', sendCard);
 
 export default sendRouter;
