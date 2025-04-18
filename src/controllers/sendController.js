@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const sendText = async (req, res) => {
+  console.log(req.body);
   const params = {
     msgtype: 'text',
     text: {
