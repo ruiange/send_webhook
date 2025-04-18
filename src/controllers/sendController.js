@@ -63,7 +63,7 @@ export const sendCard = async (req, res) => {
       },
       main_title: {
         title: '已经部署更新',
-        desc: '请前往查看最新版本',
+        desc: '请及时刷新页面',
       },
       emphasis_content: {
         // title: '100',
